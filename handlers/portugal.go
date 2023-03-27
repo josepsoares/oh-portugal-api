@@ -18,7 +18,7 @@ import (
 // @Failure 503 {object} ResponseHTTP{}
 // @Router /v1/ [get]
 func GetPortugal(c *fiber.Ctx) error {
-	portugal := []models.Portugal{}
+	portugal := []models.Country{}
 	database.DB.Db.Find(&portugal)
 
 	return c.Status(200).JSON(utils.ResponseHTTP{
