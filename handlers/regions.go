@@ -10,7 +10,7 @@ import (
 	"github.com/zeimedee/go-postgres/database"
 )
 
-// IndexRegions is a function to get all regions data from database
+// IndexRegions is a function to get all regions data from the database
 // @Summary Get all regions
 // @Description Get all regions
 // @Tags regions
@@ -20,6 +20,8 @@ import (
 // @Failure 503 {object} ResponseHTTP{}
 // @Router /v1/regions [get]
 func IndexRegions(c *fiber.Ctx) error {
+	// TODO => add query params support (autonomous, sorting by id, population total, population density, area, nr. districts, nr. municipalities, nr. freguesias)
+
 	regions := []models.Region{}
 	database.DB.Db.Find(&regions)
 
@@ -50,7 +52,7 @@ func GetRegionByID(c *fiber.Ctx) error {
 		case "record not found":
 			return c.Status(http.StatusNotFound).JSON(utils.ResponseHTTP{
 				Success: false,
-				Message: fmt.Sprintf("Book with ID %v not found.", id),
+				Message: fmt.Sprintf("Region with ID %v not found", id),
 				Data:    nil,
 			})
 		default:
@@ -59,7 +61,6 @@ func GetRegionByID(c *fiber.Ctx) error {
 				Message: err.Error(),
 				Data:    nil,
 			})
-
 		}
 	}
 

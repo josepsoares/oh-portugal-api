@@ -145,10 +145,13 @@ type Region struct {
 type Island struct {
 	gorm.Model
 
-	Name        datatypes.JSONType[NamePtEn] `json:"name"`
-	Description *string                      `json:"description"`
-	Population  int                          `json:"population"`
-	Images      pq.StringArray               `gorm:"type:text[]" json:"images"`
+	Name        datatypes.JSONType[NamePtEn]   `json:"name"`
+	Description *string                        `json:"description"`
+	Population  datatypes.JSONType[Population] `json:"population"`
+	Area        int                            `json:"area"`
+	Latitude    string                         `json:"latitude"`
+	Longitude   string                         `json:"longitude"`
+	Images      pq.StringArray                 `gorm:"type:text[]" json:"images"`
 
 	RegionID uint
 }
@@ -189,6 +192,8 @@ type Mountain struct {
 	Name        datatypes.JSONType[NamePtEn] `json:"name"`
 	Description string                       `json:"description"`
 	Altitude    string                       `json:"altitude"`
+	Latitude    string                       `json:"latitude"`
+	Longitude   string                       `json:"longitude"`
 	Images      pq.StringArray               `gorm:"type:text[]" json:"images"`
 
 	RegionID uint
