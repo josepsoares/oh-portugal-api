@@ -1,14 +1,15 @@
 package db
 
 import (
+	"errors"
 	"fmt"
+	"josepsoares/oh-portugal-api/models"
 	"josepsoares/oh-portugal-api/utils"
 	"log"
 	"os"
 	"strconv"
 
 	"github.com/joho/godotenv"
-	"github.com/zeimedee/go-postgres/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -45,8 +46,13 @@ func Connect() {
 
 	log.Println("connected")
 	db.Logger = logger.Default.LogMode(logger.Info)
+
 	log.Println("running migrations")
-	db.AutoMigrate(&models.Book{})
+	if err = db.AutoMigrate(&models.Country{}); err == nil && db.Migrator().HasTable(&User{}) {
+		if err := db.First(&User{}).Error; errors.Is(err, gorm.ErrRecordNotFound) {
+			//Insert seed data
+		}
+	}
 
 	DBConn = db
 }
