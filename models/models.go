@@ -162,8 +162,8 @@ type River struct {
 	Name           datatypes.JSONType[NamePtEn] `json:"name"`
 	Description    string                       `json:"description"`
 	Length         int                          `json:"length"`
+	National       bool                         `json:"national"`
 	Source         string                       `json:"source"`
-	SourceCountry  string                       `json:"source_country"`
 	SourceAltitude int                          `json:"source_altitude"`
 	Estuary        string                       `json:"estuary"`
 	AverageFlow    int                          `json:"average_flow"`
@@ -202,14 +202,17 @@ type Mountain struct {
 type UnescoWorldHeritageSite struct {
 	gorm.Model
 
-	Name              datatypes.JSONType[NamePtEn] `json:"name"`
-	Description       string                       `json:"description"`
-	Integrity         string                       `json:"integrity"`
-	Authenticity      string                       `json:"authenticity"`
-	DateOfInscription string                       `json:"date_of_inscription"`
-	Latitude          string                       `json:"latitude"`
-	Longitude         string                       `json:"longitude"`
-	Images            pq.StringArray               `gorm:"type:text[]" json:"images"`
+	Name            datatypes.JSONType[NamePtEn] `json:"name"`
+	Description     string                       `json:"description"`
+	Integrity       string                       `json:"integrity"`
+	Authenticity    string                       `json:"authenticity"`
+	InscriptionDate string                       `json:"inscription_date"`
+	InscriptionYear int                          `json:"inscription_year"`
+	ApprovedDate    string                       `json:"approved_date"`
+	ApprovedYear    string                       `json:"approved_year"`
+	Latitude        string                       `json:"latitude"`
+	Longitude       string                       `json:"longitude"`
+	Images          pq.StringArray               `gorm:"type:text[]" json:"images"`
 
 	RegionID uint
 }

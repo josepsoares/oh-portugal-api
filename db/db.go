@@ -1,4 +1,4 @@
-package database
+package db
 
 import (
 	"fmt"
@@ -14,11 +14,9 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-type Dbinstance struct {
-	Db *gorm.DB
-}
-
-var DB Dbinstance
+var (
+	DBConn *gorm.DB
+)
 
 func Connect() {
 	err := godotenv.Load()
@@ -50,7 +48,5 @@ func Connect() {
 	log.Println("running migrations")
 	db.AutoMigrate(&models.Book{})
 
-	DB = Dbinstance{
-		Db: db,
-	}
+	DBConn = db
 }
