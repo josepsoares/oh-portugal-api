@@ -13,7 +13,7 @@ import (
 
 // @title Oh, Portugal API! :portugal:
 // @version 1.0
-// @description This is an API for Book Application
+// @description This is an API for getting some general info about Portugal
 
 // @contact.name josepsoares
 // @contact.email josepsoares.dev@gmail.com
