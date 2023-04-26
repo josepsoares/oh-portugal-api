@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Montanha 1",
+    "name_en": "Mountain 1",
+    "description": "Lorem ipsum mountain 1",
+    "altitude": "1m",
+    "latitude": 1.0,
+    "longitude": 1.0,
+    "images": [],
+    "region_id": 1
+  }
+]

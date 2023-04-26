@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ilha 1",
+    "name_en": "island 1",
+    "description": "Lorem ipsum 1",
+    "population": 1,
+    "population_density": "1km",
+    "area": "1km²",
+    "latitude": 1.0,
+    "longitude": 1.0,
+    "images": [],
+    "region_id": 1
+  },
+  {
+    "name": "ilha 2",
+    "name_en": "island 2",
+    "description": "Lorem ipsum 2",
+    "population": 0,
+    "population_density": "2km²",
+    "area": "2km²",
+    "latitude": 2.0,
+    "longitude": 2.0,
+    "images": [],
+    "region_id": 2
+  }
+]

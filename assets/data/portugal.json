@@ -1,0 +1,90 @@
+{
+  "name": "Portugal",
+  "name_en": "Portugal",
+  "name_official": "República Portuguesa",
+  "name_official_en": "Portuguese Republic",
+  "demonyms": ["Português", "Portuguesa"],
+  "demonyms_en": ["Portuguese"],
+  "languages": {
+    "official": "Português",
+    "recognized": ["Mirandês", "Língua Gestual Portuguesa"]
+  },
+  "foundation_date": "23/05/1179",
+  "independent": true,
+  "political_system": [
+    "Democracia",
+    "Democracia Cristã",
+    "República constitucional unitária semipresidencialista"
+  ],
+  "population": 10343066,
+  "population_density": "112,1km²",
+  "area": "92256km²",
+  "continents": ["Europe"],
+  "region": "Europe",
+  "subregion": "Southern Europe",
+  "borders": ["Spain"],
+  "capital": {
+    "name": "Lisboa",
+    "name_en": "Lisbon",
+    "latitude": 38.71667,
+    "longitude": -9.13333
+  },
+  "currency": {
+    "name": "Euro",
+    "symbol": "€"
+  },
+  "gini": {
+    "value": 31.9,
+    "date": 2019
+  },
+  "nato": {
+    "member": true,
+    "date": "04/04/1949"
+  },
+  "united_nations": {
+    "member": true,
+    "date": "14/12/1955"
+  },
+  "european_union": {
+    "member": true,
+    "date": "01/01/1986"
+  },
+  "g7": {
+    "member": false,
+    "date": null
+  },
+  "timezones": ["UTC-01:00", "UTC"],
+  "start_of_week": "Monday",
+  "driving_side": "Right",
+  "maps": {
+    "google_maps": "https://goo.gl/maps/BaTBSyc4GWMmbAKB8",
+    "open_street": "https://www.openstreetmap.org/relation/295480"
+  },
+  "idd": "+351",
+  "tld": [".pt"],
+  "cca2": "PT",
+  "ccn3": "620",
+  "cca3": "PRT",
+  "cioc": "POR",
+  "postal_code": {
+    "format": "####-###",
+    "regex": "^(\\d{7})$"
+  },
+  "flag": {
+    "png": "https://flagcdn.com/w320/pt.png",
+    "svg": "https://flagcdn.com/pt.svg",
+    "emoji": "🇵🇹"
+  },
+  "coat_of_arms": {
+    "png": "https://mainfacts.com/media/images/coats_of_arms/pt.png",
+    "svg": "https://mainfacts.com/media/images/coats_of_arms/pt.svg"
+  },
+  "official_websites": [
+    "http://www.presidencia.pt/",
+    "http://www.portugal.gov.pt/"
+  ],
+  "national_anthem": {
+    "name": "A Portuguesa",
+    "track": "https://pt.wikipedia.org/wiki/Ficheiro:A_Portuguesa.ogg"
+  }
+}

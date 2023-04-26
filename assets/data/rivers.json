@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Rio 1",
+    "name_en": "River 1",
+    "description": "Lorem ipsum rio",
+    "length": 1,
+    "national": true,
+    "source": "1",
+    "source_altitude": "1",
+    "estuary": "1",
+    "average_flow": "1",
+    "watershed_area": "1",
+    "images": [],
+    "regions_ids": [1]
+  }
+]
