@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build our application.
-RUN CGO_ENABLED=0 GOOS=linux go build -o docker-oh-portugal-api-arch ./cmd/docker-oh-portugal-api-arch/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o iberiapi-arch ./cmd/main.go
 
 # Use 'scratch' image for super-mini build.
 FROM scratch AS prod
@@ -22,9 +22,13 @@ FROM scratch AS prod
 # Set working directory for this stage.
 WORKDIR /production
 
+COPY .env ./
+COPY views ./views
+# COPY assets/images ./assets/images/.
+
 # Copy our compiled executable from the last stage.
-COPY --from=api /compiler/docker-oh-portugal-api-arch .
+COPY --from=api /compiler/iberiapi-arch .
 
 # Run application and expose port 8080.
 EXPOSE 8080
-CMD ["./docker-oh-portugal-api-arch"]
+CMD ["./iberiapi-arch"]

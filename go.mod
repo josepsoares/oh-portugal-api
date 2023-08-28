@@ -1,4 +1,4 @@
-module josepsoares/oh-portugal-api
+module josepsoares/iberiapi
 
 go 1.19
 

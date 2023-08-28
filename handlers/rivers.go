@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"fmt"
-	"josepsoares/oh-portugal-api/db"
-	"josepsoares/oh-portugal-api/models"
-	"josepsoares/oh-portugal-api/utils"
+	"josepsoares/iberiapi/db"
+	"josepsoares/iberiapi/models"
+	"josepsoares/iberiapi/utils"
 	"net/http"
 	"strconv"
 

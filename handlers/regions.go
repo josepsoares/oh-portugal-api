@@ -2,10 +2,11 @@ package handlers
 
 import (
 	"fmt"
-	"josepsoares/oh-portugal-api/db"
-	"josepsoares/oh-portugal-api/models"
-	"josepsoares/oh-portugal-api/utils"
+	"josepsoares/iberiapi/db"
+	"josepsoares/iberiapi/models"
+	"josepsoares/iberiapi/utils"
 	"net/http"
+
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
@@ -87,7 +88,7 @@ func IndexRegions(c *fiber.Ctx) error {
 	return c.Status(200).JSON(utils.ResponseHTTP{
 		Success: true,
 		Message: "Success getting regions",
-		Data:    regions,
+		// Data:    regions,
 	})
 }
 

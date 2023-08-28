@@ -1,10 +1,8 @@
 package db
 
 import (
-	"errors"
 	"fmt"
-	"josepsoares/oh-portugal-api/models"
-	"josepsoares/oh-portugal-api/utils"
+	"josepsoares/iberiapi/utils"
 	"log"
 	"os"
 	"strconv"
@@ -24,11 +22,11 @@ func Connect() {
 	utils.FailOnError("couldn't read .env file", err)
 
 	var (
-		pg_user     = os.Getenv("DB_USER")
-		pg_password = os.Getenv("DB_PASSWORD")
-		pg_host     = os.Getenv("DB_HOST")
-		pg_db       = os.Getenv("DB_NAME")
-		pg_port     = os.Getenv("DB_PORT")
+		pg_user     = os.Getenv("POSTGRES_USER")
+		pg_password = os.Getenv("POSTGRES_PASSWORD")
+		pg_host     = os.Getenv("POSTGRES_HOST")
+		pg_db       = os.Getenv("POSTGRES_DB")
+		pg_port     = os.Getenv("POSTGRES_PORT")
 	)
 
 	port, err := strconv.Atoi(pg_port)
@@ -48,11 +46,6 @@ func Connect() {
 	db.Logger = logger.Default.LogMode(logger.Info)
 
 	log.Println("running migrations")
-	if err = db.AutoMigrate(&models.Country{}); err == nil && db.Migrator().HasTable(&User{}) {
-		if err := db.First(&User{}).Error; errors.Is(err, gorm.ErrRecordNotFound) {
-			//Insert seed data
-		}
-	}
 
 	DBConn = db
 }
